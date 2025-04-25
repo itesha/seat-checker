@@ -44,3 +44,7 @@ def home():
 
 port = int(os.environ.get("PORT", 10000))
 app.run(host='0.0.0.0', port=port)
+
+# Flask 서버를 별도 쓰레드로 실행
+t = Thread(target=run_flask)
+t.start()

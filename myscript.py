@@ -32,3 +32,15 @@ while True:
         print("아직 빈자리 없음.")
     
     time.sleep(1)
+    
+import os
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "자리 감지 중!"
+
+port = int(os.environ.get("PORT", 10000))
+app.run(host='0.0.0.0', port=port)

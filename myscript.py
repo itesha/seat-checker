@@ -29,7 +29,7 @@ def run_flask():
 t = Thread(target=run_flask)
 t.start()
 
-# 자리 감지 루프도 메인 쓰레드에서 계속 실행
+# 자리 감지 루프
 url = 'https://tickets.interpark.com/goods/25005684'
 
 while True:

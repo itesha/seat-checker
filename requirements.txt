@@ -1,4 +1,2 @@
-selenium
 requests
-bs4
-webdriver-manager
+beautifulsoup4

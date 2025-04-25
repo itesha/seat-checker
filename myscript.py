@@ -14,8 +14,9 @@ def send_telegram(message):
     data = {'chat_id': CHAT_ID, 'text': message}
     requests.post(url, data=data)
 
-# 자리 감지 함수 따로 분리
+# 자리 감지 함수
 def seat_checker():
+    print("자리 감지 시작!")  # 디버그 로그
     url = 'https://tickets.interpark.com/goods/25005684'
     while True:
         response = requests.get(url)
@@ -27,7 +28,7 @@ def seat_checker():
         for seat in seat_info:
             seat_name = seat.find('strong', class_='seatTableName').text.strip()
             seat_status = seat.find('span', class_='seatTableStatus').text.strip()
-            print(f'{seat_name}: {seat_status}')
+            print(f'{seat_name}: {seat_status}')  # 좌석 상태 로그
 
             if '0석' not in seat_status:
                 found_seat = True
